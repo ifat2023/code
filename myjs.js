@@ -48,7 +48,7 @@ function ex4() {
 
 // Exs.5
 
-function ex4() {
+function ex5() {
   const today = new Date();
   const day = today.getDay();
   const daylist = [
@@ -108,6 +108,7 @@ function ex8() {
   document.write("your age is: " + age);
 }
 
+//Exs.9
 function ex9() {
   let player = prompt("Please enter your name ");
   let score = prompt("please enter yore score");
@@ -122,6 +123,7 @@ function ex9() {
   }
 }
 
+//Exs.10
 function ex10() {
   let num1 = Number(prompt("Please enter your number "));
   let num2 = Number(prompt("Please enter your number "));
@@ -137,6 +139,7 @@ function ex10() {
   document.write(average);
 }
 
+//Exs.11
 function ex11() {
   let num = Number(prompt("Please enter number "));
 
@@ -147,6 +150,7 @@ function ex11() {
   }
 }
 
+//Exs.12
 function ex12() {
   let students = parseInt(prompt("Please enter the number of students"));
 
@@ -165,6 +169,7 @@ function ex12() {
   document.write(" number of medics " + medic);
 }
 
+//Exs.13
 function ex13() {
   let min = prompt("please enter the minutes");
   const minNumber = Number(min);
@@ -183,6 +188,7 @@ function getTime(totalMinutes) {
     .padStart(2, "0")}`;
 }
 
+//Exs.14
 function ex14() {
   let price = prompt("please enter the price of the car");
   let payments = prompt("please enter desired number of payments (till 24 )");
@@ -203,6 +209,7 @@ function ex14() {
   );
 }
 
+//Exs.15
 function ex15() {
   let funds = prompt("Please specify the number of funds in the train");
   let time = prompt( "Please specify the time of day ? morning, noon or evening");
@@ -225,7 +232,40 @@ function ex15() {
     total = (evening - ( tax  * evening)) - salary;
   }
 
-  document.write(
-    " Net profit from operating the train line in the morning " + total
-  );
+  document.write( " Net profit from operating the train line in the morning " + total );
+}
+
+
+function star() {
+  let n = prompt("Please enter your number ");
+
+  for (let i=0; i < n; i++){
+    document.write(  "*" );
+  } 
+}
+
+
+function assembly() {
+  let n = Number( prompt("Please enter your number "));
+let total=1;
+  for (let i=1; i<=n; i++){
+    total=total*i;
+   
+  } 
+  document.write( n + "! = " +  total );
+}
+
+
+function largerNumber() {
+
+ const num = [a,b];
+let i = 0
+if (a > i && b < a > i) {
+  document.write("the larger number is " + "a")
+}
+else{
+  document.write("the larger number is " + "b")
+}
+
+document.write("the larger number is " + "b")
 }
