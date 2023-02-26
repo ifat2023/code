@@ -273,9 +273,9 @@ function ex101() {
 
 //Exs.2
 function ex102() {
-  let e = Number(prompt("enter e"));
-  let f = Number(prompt("enter f"));
-  let g = Number(prompt("enter g"));
+  let e = Number(prompt("enter number negativ or positiv to check + -"));
+  let f = Number(prompt("enter number negativ or positiv to check + -"));
+  let g = Number(prompt("enter number negativ or positiv to check + -"));
 
   let counter = 0;
 
@@ -299,9 +299,9 @@ function ex102() {
 //Exs.3
 
 function ex103() {
-  let h = 0
-  let i = -1
-  let j = 4
+  let h = 0;
+  let i = -1;
+  let j = 4;
 
   if (j > h && j > i) {
     document.write(j + "," + h + "," + i);
@@ -332,7 +332,7 @@ function ex104() {
 //Exs.5
 
 function ex105() {
-  let n = 15
+  let n = 15;
   for (let i = 0; i <= n; i++) {
     if (i % 2 == 0) {
       document.write(i + "  is even " + "</br>");
@@ -372,14 +372,13 @@ function ex106() {
 function ex107() {
   let n = 100;
 
-  for (let i = 1; i <= n; i++)
-  {
+  for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      document.writeln(i + " FizzBuzz " + "</br>" );
+      document.writeln(i + " FizzBuzz " + "</br>");
     } else if (i % 3 === 0) {
-      document.writeln(i + " Fizz " + "</br>" );
-    } else if (i % 5 === 0 ) {
-      document.writeln(i + " Buzz " + "</br>" );
+      document.writeln(i + " Fizz " + "</br>");
+    } else if (i % 5 === 0) {
+      document.writeln(i + " Buzz " + "</br>");
     } else {
       document.writeln(i + "</br>");
     }
@@ -388,14 +387,12 @@ function ex107() {
 
 //Exs.10
 function ex110() {
-
-for (let i = 1; i <6; i++) {
-  for (let j = 0; j <i; j++) {
-    document.write("* ");
+  for (let i = 1; i < 6; i++) {
+    for (let j = 0; j < i; j++) {
+      document.write("* ");
+    }
+    document.write("<br/>");
   }
-  document.write("<br/>");
-
-}
 }
 
 //Exs.11
@@ -408,39 +405,225 @@ function ex111() {
   document.write(gcd);
 }
 
-function getGcd(num1,num2){
+function getGcd(num1, num2) {
   let lowest = 0;
-  if (num1 < num2 )
-{
-  lowest = num1
-}
-else {
-  lowest = num2
-}
- for (let i = lowest; i > 0; i--) {
-let result = isGcd(num1, num2, i);
-if (result == true) {
-return i;
- }
-}
-
-return 1;
-}
-
-function isGcd(num1, num2, value){
-  if (num1 % value == 0 && num2 % value == 0 ) {
-    return true;
+  if (num1 < num2) {
+    lowest = num1;
+  } else {
+    lowest = num2;
   }
-  else {
+  for (let i = lowest; i > 0; i--) {
+    let result = isGcd(num1, num2, i);
+    if (result == true) {
+      return i;
+    }
+  }
+
+  return 1;
+}
+
+function isGcd(num1, num2, value) {
+  if (num1 % value == 0 && num2 % value == 0) {
+    return true;
+  } else {
     return false;
   }
-
-
 }
 
 //Exs.12
 
 function ex112() {
+  let sum = 0;
+  for (let i = 0; i <= 30; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      sum += i;
+    }
+  }
+  document.write(sum);
+}
 
+//Exs. second home-work 1-10 (arry)
 
+//Exs.1
+
+function ex201() {
+  document.write(is_array("w3resource"));
+  document.write("<br>");
+  document.write(is_array([1, 2, 4, 0]));
+}
+
+function is_array(input) {
+  if (Array.isArray(input)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//Exs.2
+function ex202() {
+  document.write(array_Clone([1, 2, 4, 0]));
+  document.write("<br>");
+  document.write(array_Clone([1, 2, [4, 0]]));
+}
+
+function array_Clone(arr) {
+  let numberCopy = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    numberCopy.push(element);
+  }
+
+  return numberCopy;
+}
+//Exs.3
+
+function ex203() {
+  document.write(first([7, 9, 0, -2]));
+  document.write("<br>");
+  document.write(first([], 3));
+  document.write("<br>");
+  document.write(first([7, 9, 0, -2], 3));
+  document.write("<br>");
+  document.write(first([7, 9, 0, -2], 6));
+  document.write("<br>");
+  document.write(first([7, 9, 0, -2], -3));
+}
+function first(array, n) {
+  const result = [];
+  if (n == undefined) {
+    n = 1;
+  }
+  if (array.length <= n) {
+    return array;
+  }
+
+  for (let i = 0; i < n; i++) {
+    let item = array[i];
+    result.push(item);
+  }
+  return result;
+}
+
+//Exs.4
+
+function ex204() {
+  document.write(last([7, 9, 0, -2]));
+  document.write("<br>");
+  document.write(last([7, 9, 0, -2], 3));
+  document.write("<br>");
+  document.write(last([7, 9, 0, -2], 6));
+}
+
+function last(array, n) {
+  const result = [];
+
+  if (n == undefined) {
+    return array[array.length - 1];
+  }
+  if (array.length >= n) {
+    return array.splice(1, 3);
+  }
+  if (array.length <= n) {
+    return array;
+  }
+
+  for (let i = 0; i < n; i++) {
+    let item = array[i];
+    result.push(item);
+  }
+  return result;
+}
+
+//Exs.5
+
+function ex205() {
+  const mycolor = ["Red", "Green", "White", "Black"];
+
+  let withComma = "";
+  let withPlus = "";
+  for (let i = 0; i < mycolor.length; i++) {
+    const element = mycolor[i];
+    withComma = withComma + element + ",";
+    withPlus = withPlus + element + "+";
+  }
+  withComma = withComma.substring(0, withComma.length - 1);
+  withPlus = withPlus.substring(0, withPlus.length - 1);
+
+  document.write(withComma);
+  document.write("<br>");
+  document.write(withPlus);
+  document.write("<br>");
+  //  document.write( mycolor.toString());
+  //  document.write("<br>");
+  //  document.write( mycolor.join(" + "));
+  //  document.write("<br>");
+}
+
+//Exs.6
+function ex206() {
+  let num = "025468";
+  let arrnum = [];
+
+  for (let i = 0, j = 0; i < num.length; i++) {
+    if (num[i] % 2 == 0 && num[i + 1] % 2 == 0) {
+      arrnum[j] = num[i];
+      j++;
+      arrnum[j] = "-";
+      j++;
+    } else {
+      arrnum[j] = num[i];
+      j++;
+    }
+  }
+  document.write(arrnum.join(""));
+}
+
+//Exs.7
+function ex207(){
+  let array1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+
+  let sorted = [];
+  let firstIndex = max(array1);
+ sorted.push(firstIndex);
+  document.write(sorted);
+  
+  
+}
+
+function max(array) {
+
+  let result = array[0];
+let index =0;
+  for (let i = 1; i < array.length; i++) {
+  if (array[i]>result){
+   result=array[i];
+   index=i;
+  }
+
+  }
+ return index;
+}
+
+function c12(){
+  let sum= 0;
+
+let x=0;
+let y=1;
+sum = x+y;
+
+  for (let i = 0 ; i<=10;i++) {
+    x=y;
+    y=sum;
+    sum = x+y;
+    
+    document.write(sum + ",")
+  }
+  
+}
+
+//Exs.8
+function ex208() {
+  let arr1 = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
 }
