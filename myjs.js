@@ -212,9 +212,7 @@ function ex14() {
 //Exs.15
 function ex15() {
   let funds = prompt("Please specify the number of funds in the train");
-  let time = prompt(
-    "Please specify the time of day ? morning, noon or evening"
-  );
+  let time = prompt( "Please specify the time of day ? morning, noon or evening");
   let salary = prompt("The driver's salary");
 
   const price = 6.6;
@@ -234,9 +232,7 @@ function ex15() {
     total = evening - tax * evening - salary;
   }
 
-  document.write(
-    " Net profit from operating the train line in the morning " + total
-  );
+  document.write(" Net profit from operating the train line in the morning " + total );
 }
 
 function star() {
@@ -583,28 +579,11 @@ function ex206() {
 //Exs.7
 function ex207(){
   let array1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
-
-  let sorted = [];
-  let firstIndex = max(array1);
- sorted.push(firstIndex);
-  document.write(sorted);
-  
-  
+  array1.sort(function(a, b){return a - b});
+  document.write(array1)
 }
+  
 
-function max(array) {
-
-  let result = array[0];
-let index =0;
-  for (let i = 1; i < array.length; i++) {
-  if (array[i]>result){
-   result=array[i];
-   index=i;
-  }
-
-  }
- return index;
-}
 
 function c12(){
   let sum= 0;
@@ -627,3 +606,4 @@ sum = x+y;
 function ex208() {
   let arr1 = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
 }
+
